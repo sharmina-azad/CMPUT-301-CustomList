@@ -22,11 +22,25 @@ public class CityList {
         cities.add(city);
     }
 
+    public void delete(City city) {
+        if (cities.contains(city)) {
+            cities.remove(city);
+        }
+        else{
+            throw new IllegalArgumentException();
+        }
+    }
+
     /**
      * This returns a sorted list of cities
      * @return
      *      Return the sorted list
      */
+    public int size() {
+
+        return cities.size();
+    }
+
     public List<City> getCities() {
         List<City> list = cities;
         Collections.sort(list);
